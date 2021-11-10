@@ -14,7 +14,6 @@ class Display extends Component {
           <p>
             <strong>Location:</strong> {this.props.location} | <strong>Mobile:</strong>  {this.props.mobile}| <strong>email:</strong> {this.props.email} |
           </p>
-          <p><em>{this.props.tagline}</em></p>
         </div>
 
         <div className="profile">
