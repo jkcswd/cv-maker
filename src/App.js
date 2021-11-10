@@ -9,6 +9,8 @@ import Input from './components/input';
 class App extends Component{
   constructor(props) {
     super(props);
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
 
     this.state = {
       inputs: {
@@ -101,10 +103,18 @@ class App extends Component{
     }
   }
 
+  handleChange = () => {
+
+  }
+
+  handleSubmit = () => {
+
+  }
+
   render(){
     return (
       <div className="App">
-        <Input/>
+        <Input handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
         <Display stateData={this.state}/>
       </div>
     );
