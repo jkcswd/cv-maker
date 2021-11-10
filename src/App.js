@@ -115,7 +115,7 @@ class App extends Component{
     return (
       <div className="App">
         <Input handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-        <Display stateData={this.state}/>
+        <Display cvData={this.state.cvData}/>
       </div>
     );
   }
