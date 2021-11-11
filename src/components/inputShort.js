@@ -9,13 +9,19 @@ class InputShort extends Component {
             {this.props.propertyValue}
             <input 
               type="text" 
-              data-category="general" 
-              data-value="name"
+              data-category={this.props.propertyCategory}
+              data-value={this.props.propertyValue}
               value={this.props.inputData[this.props.propertyCategory][this.props.propertyValue].value} 
               onChange={this.props.handleChange} 
             />
           </label>
-          <input type="submit" value="Submit" onSubmit={this.props.handleSubmit}/>
+          <input 
+            type="submit" 
+            value="Submit" 
+            data-category={this.props.propertyCategory}
+            data-value={this.props.propertyValue}
+            onSubmit={this.props.handleSubmit}
+          />
         </form>
       </div>
     )
