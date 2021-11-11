@@ -16,7 +16,7 @@ class App extends Component{
       inputs: {
         general: {
           name:{
-            value:'test',
+            value:'test-name',
             id: uniqid()
           },
           location:{
@@ -105,8 +105,12 @@ class App extends Component{
 
   handleChange = (e) => {
     this.setState({
-      ...this.state, //check if this really needed.
-      [e.target.name]: e.target.value // So that handleChange can be used for modifying any state property. 
+      //...this.state, //check if this really needed.
+      inputs:{
+        [e.target.dataset.category]: {
+          [e.target.dataset.value]: e.target.value // So that handleChange can be used for modifying any state property. 
+        }
+      }
     })
   }
 
