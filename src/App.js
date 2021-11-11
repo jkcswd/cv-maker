@@ -16,7 +16,7 @@ class App extends Component{
       inputs: {
         general: {
           name:{
-            value:'test-name',
+            value:'james',
             id: uniqid()
           },
           location:{
@@ -105,10 +105,14 @@ class App extends Component{
 
   handleChange = (e) => {
     this.setState({
-      //...this.state, //check if this really needed.
       inputs:{
+        ...this.state.inputs,
         [e.target.dataset.category]: {
-          [e.target.dataset.value]: e.target.value // So that handleChange can be used for modifying any state property. 
+          ...this.state.inputs[e.target.dataset.category],
+          [e.target.dataset.value]: {
+            value:e.target.value,
+            id: this.state.inputs[e.target.dataset.category][e.target.dataset.value].id
+          }  // So that handleChange can be used for modifying any state property. 
         }
       }
     })
@@ -116,7 +120,14 @@ class App extends Component{
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.state.cvData[e.target.name].concat(this.state.inputs[e.target.name].value)
+    this.setState({
+      cvData: {
+        [e.target.dataset.category]:{
+          [e.target.dataset.value]:(this.state.inputs[e.target.dataset.category][e.target.dataset.value].value)
+        }
+      }
+    })
+    console.log(this.state.cvData)
   }
 
   render(){
