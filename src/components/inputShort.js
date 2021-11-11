@@ -4,7 +4,7 @@ class InputShort extends Component {
   render() {
     return (
       <div className="Input">
-        <form>
+        <form onSubmit={this.props.handleSubmit} data-category={this.props.propertyCategory} data-value={this.props.propertyValue}>
           <label>
             {this.props.propertyValue}
             <input 
@@ -18,9 +18,7 @@ class InputShort extends Component {
           <input 
             type="submit" 
             value="Submit" 
-            data-category={this.props.propertyCategory}
-            data-value={this.props.propertyValue}
-            onSubmit={this.props.handleSubmit}
+
           />
         </form>
       </div>
