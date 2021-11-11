@@ -6,15 +6,17 @@ class Display extends Component {
       <div className="Display">
 
         <div className="general">
-          <h1>{this.props.cvData.general.name}</h1>
+          <h1>{this.props.cvData.general.name.value}</h1>
           <p>
-            <strong>Location:</strong> {this.props.location} | <strong>Mobile:</strong>  {this.props.mobile}| <strong>email:</strong> {this.props.email} |
+            <strong>Location:</strong> {this.props.cvData.general.location.value} 
+            | <strong>Mobile:</strong>  {this.props.cvData.general.mobile.value}
+            | <strong>email:</strong> {this.props.cvData.general.email.value} |
           </p>
         </div>
 
         <div className="profile">
           <h2>Personal Profile</h2>
-          <p>{this.props.profile}</p>
+          <p>{this.props.cvData.profile.statement.value}</p>
         </div>
 
         <div className="experience">
