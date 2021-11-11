@@ -42,6 +42,13 @@ class Input extends Component {
           propertyCategory="profile" 
           propertyValue="statement"
         />
+        <InputLong 
+          handleChange={this.props.handleChange} 
+          handleSubmit={this.props.handleSubmit} 
+          inputData={this.props.inputData}  
+          propertyCategory="skills" 
+          propertyValue="skill"
+        />
       </div>
     )
   }
