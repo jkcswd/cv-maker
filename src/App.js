@@ -3,7 +3,7 @@ import uniqid from 'uniqid'
 
 import './App.css';
 import Display from './components/Display';
-import Input from './components/input';
+import Input from './components/Input';
 
 
 class App extends Component{

@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 
-import InputDate from './inputDate';
-import InputLong from './inputLong';
-import InputShort from './inputShort';
+import InputDate from './InputDate';
+import InputLong from './InputLong';
+import InputShort from './InputShort';
 
 class Input extends Component {
   render() {

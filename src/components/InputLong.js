@@ -1,10 +1,6 @@
 import React, {Component} from 'react'
 
 class InputLong extends Component {
-  constructor(props){
-    super(props);
-  }
-
   render() {
     return (
       <div className="Input">
