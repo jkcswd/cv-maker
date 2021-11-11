@@ -9,8 +9,8 @@ class Display extends Component {
           <h1>{this.props.cvData.general.name.value}</h1>
           <p>
             <strong>Location:</strong> {this.props.cvData.general.location.value} 
-            | <strong>Mobile:</strong>  {this.props.cvData.general.mobile.value}
-            | <strong>email:</strong> {this.props.cvData.general.email.value} |
+            |<strong>Mobile:</strong>  {this.props.cvData.general.mobile.value}
+            |<strong>email:</strong> {this.props.cvData.general.email.value}
           </p>
         </div>
 
@@ -31,7 +31,7 @@ class Display extends Component {
 
         <div className="about">
           <h2>Skills and Languages</h2>
-          <p>{this.props.skills}</p>
+          <p>{this.props.cvData.skills.skill.value}</p>
         </div>
 
       </div>
