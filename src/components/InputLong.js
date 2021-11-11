@@ -4,10 +4,15 @@ class InputLong extends Component {
   render() {
     return (
       <div className="Input">
-        <form>
+        <form onSubmit={this.props.handleSubmit} data-category={this.props.propertyCategory} data-value={this.props.propertyValue}>
           <label>
-            Name:
-            <input type="text" name="name" />
+            {this.props.propertyValue}
+            <textarea 
+              data-category={this.props.propertyCategory}
+              data-value={this.props.propertyValue}
+              value={this.props.inputData[this.props.propertyCategory][this.props.propertyValue].value} 
+              onChange={this.props.handleChange} 
+            />
           </label>
           <input type="submit" value="Submit" />
         </form>
