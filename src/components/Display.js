@@ -1,16 +1,12 @@
 import React, { Component } from "react";
 
 class Display extends Component {
-  constructor(props){
-    super(props);
-  }
-
   render() {
     return (
       <div className="Display">
 
         <div className="general">
-          <h1>{this.props.name}</h1>
+          <h1>{this.props.cvData.general.name}</h1>
           <p>
             <strong>Location:</strong> {this.props.location} | <strong>Mobile:</strong>  {this.props.mobile}| <strong>email:</strong> {this.props.email} |
           </p>
