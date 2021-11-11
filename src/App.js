@@ -39,33 +39,30 @@ class App extends Component{
           }
         },
         experience:{
-          company:{
-            name:{
+          name:{
+            value:'',
+            id: uniqid()
+          },
+          position:{
+            value:'',
+            id: uniqid()
+          },
+          jobTasks:{
+            value:'',
+            id: uniqid()
+          },
+          date:{
+            to:{
               value:'',
               id: uniqid()
             },
-            position:{
+            from:{
               value:'',
               id: uniqid()
-            },
-            jobTasks:{
-              value:'',
-              id: uniqid()
-            },
-            date:{
-              to:{
-                value:'',
-                id: uniqid()
-              },
-              from:{
-                value:'',
-                id: uniqid()
-              }
             }
           }
         },
         education:{
-          institution:{
             schoolName:{
               value:'',
               id: uniqid()
@@ -84,7 +81,6 @@ class App extends Component{
                 id: uniqid()
               }
             }
-          }
         },
         skills: {
           skill:{
@@ -113,45 +109,8 @@ class App extends Component{
             value:''
           }
         },
-        experience:{
-          company:{
-            name:{
-              value:''
-            },
-            position:{
-              value:''
-            },
-            jobTasks:{
-              value:''
-            },
-            date:{
-              to:{
-                value:''
-              },
-              from:{
-                value:''
-              }
-            }
-          }
-        },
-        education:{
-          institution:{
-            schoolName:{
-              value:''
-            },
-            subject:{
-              value:''
-            },
-            date:{
-              to:{
-                value:''
-              },
-              from:{
-                value:''
-              }
-            }
-          }
-        },
+        experience:[],
+        education:[],
         skills: {
           skill:{
             value:''
