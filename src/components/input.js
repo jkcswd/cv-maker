@@ -5,11 +5,6 @@ import InputLong from './inputLong';
 import InputShort from './inputShort';
 
 class Input extends Component {
-  constructor(props){
-    super(props);
-
-  }
-
   render() {
     return (
       <div className="Input">
