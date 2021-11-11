@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 
-import InputDate from './InputDate';
 import InputLong from './InputLong';
 import InputShort from './InputShort';
 
@@ -35,6 +34,13 @@ class Input extends Component {
           inputData={this.props.inputData}  
           propertyCategory="general" 
           propertyValue="email"
+        />
+        <InputLong 
+          handleChange={this.props.handleChange} 
+          handleSubmit={this.props.handleSubmit} 
+          inputData={this.props.inputData}  
+          propertyCategory="profile" 
+          propertyValue="statement"
         />
       </div>
     )
