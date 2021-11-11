@@ -16,7 +16,7 @@ class App extends Component{
       inputs: {
         general: {
           name:{
-            value:'james',
+            value:'',
             id: uniqid()
           },
           location:{
@@ -94,16 +94,75 @@ class App extends Component{
         }
       },
       cvData: {
-        general:{},
-        profile:{},
-        experience:{},
-        education:{},
-        skills: {}
+        general:{
+          name:{
+            value:''
+          },
+          location:{
+            value:''
+          },
+          mobile:{
+            value:''
+          },
+          email:{
+            value:''
+          }
+        },
+        profile:{
+          statement:{
+            value:''
+          }
+        },
+        experience:{
+          company:{
+            name:{
+              value:''
+            },
+            position:{
+              value:''
+            },
+            jobTasks:{
+              value:''
+            },
+            date:{
+              to:{
+                value:''
+              },
+              from:{
+                value:''
+              }
+            }
+          }
+        },
+        education:{
+          institution:{
+            schoolName:{
+              value:''
+            },
+            subject:{
+              value:''
+            },
+            date:{
+              to:{
+                value:''
+              },
+              from:{
+                value:''
+              }
+            }
+          }
+        },
+        skills: {
+          skill:{
+            value:''
+          }
+        }
       }
     };
   }
 
   handleChange = (e) => {
+    // Use data-attributes so handleChange can be used for modifying any state property. 
     this.setState({
       inputs:{
         ...this.state.inputs,
@@ -112,22 +171,26 @@ class App extends Component{
           [e.target.dataset.value]: {
             value:e.target.value,
             id: this.state.inputs[e.target.dataset.category][e.target.dataset.value].id
-          }  // So that handleChange can be used for modifying any state property. 
+          }  
         }
       }
     })
   }
 
   handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     this.setState({
       cvData: {
+        ...this.state.cvData,
         [e.target.dataset.category]:{
-          [e.target.dataset.value]:(this.state.inputs[e.target.dataset.category][e.target.dataset.value].value)
+          ...this.state.cvData[e.target.dataset.category],
+          [e.target.dataset.value]:{
+            value:(this.state.inputs[e.target.dataset.category][e.target.dataset.value].value),
+            id:(this.state.inputs[e.target.dataset.category][e.target.dataset.value].id)
+          }
         }
       }
     })
-    console.log(this.state.cvData)
   }
 
   render(){
