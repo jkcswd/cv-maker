@@ -17,7 +17,7 @@ class InputShort extends Component {
           </label>
           <input 
             type="submit" 
-            value="Submit" 
+            value="Update" 
           />
         </form>
       </div>

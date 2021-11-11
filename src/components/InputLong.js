@@ -14,7 +14,7 @@ class InputLong extends Component {
               onChange={this.props.handleChange} 
             />
           </label>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Update" />
         </form>
       </div>
     )
