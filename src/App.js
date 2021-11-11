@@ -16,7 +16,7 @@ class App extends Component{
       inputs: {
         general: {
           name:{
-            value:'',
+            value:'test',
             id: uniqid()
           },
           location:{
@@ -100,21 +100,25 @@ class App extends Component{
         education:{},
         skills: {}
       }
-    }
+    };
   }
 
-  handleChange = () => {
-
+  handleChange = (e) => {
+    this.setState({
+      ...this.state, //check if this really needed.
+      [e.target.name]: e.target.value // So that handleChange can be used for modifying any state property. 
+    })
   }
 
-  handleSubmit = () => {
-
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.state.cvData[e.target.name].concat(this.state.inputs[e.target.name].value)
   }
 
   render(){
     return (
       <div className="App">
-        <Input handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+        <Input handleChange={this.handleChange} handleSubmit={this.handleSubmit} inputData={this.state.inputs}/>
         <Display cvData={this.state.cvData}/>
       </div>
     );
