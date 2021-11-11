@@ -196,8 +196,8 @@ class App extends Component{
   render(){
     return (
       <div className="App">
-        <Input handleChange={this.handleChange} handleSubmit={this.handleSubmit} inputData={this.state.inputs}/>
-        <Display cvData={this.state.cvData}/>
+        <Input handleChange={this.handleChange} handleSubmit={this.handleSubmit} inputData={this.state.inputs} className="Input"/>
+        <Display cvData={this.state.cvData} className="Display"/>
       </div>
     );
   }
