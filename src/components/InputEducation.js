@@ -8,7 +8,7 @@ class InputEducation extends Component {
   render() {
     return (
       <div className="InputEducation">
-        <form>
+        <form onSubmit={this.props.multiSubmit} data-category="education">
           <label>
             School Name:
             <input 

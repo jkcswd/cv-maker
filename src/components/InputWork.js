@@ -4,7 +4,7 @@ class InputWork extends Component {
   render() {
     return (
       <div className="InputWork">
-        <form>
+        <form onSubmit={this.props.multiSubmit} data-category="experience">
           <label>
             Company Name:
             <input 
