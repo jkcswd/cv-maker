@@ -163,13 +163,92 @@ class App extends Component{
   }
 
   multiSubmit = (e) => {
-
+    e.preventDefault()
+    if (e.target.dataset.category === "education") {
+      this.setState({
+        cvData:{
+          ...this.state.cvData,
+          education:this.state.cvData.education.concat(
+            this.state.inputs.education
+          )
+        },
+        inputs:{
+          ...this.state.inputs,
+          education:{
+            schoolName:{
+              value:'',
+              id: uniqid()
+            },
+            subject:{
+              value:'',
+              id: uniqid()
+            },
+            date:{
+              to:{
+                value:'',
+                id: uniqid()
+              },
+              from:{
+                value:'',
+                id: uniqid()
+              }
+            },
+            summary: {
+              value:'',
+              id: uniqid()
+            }
+          }
+        }
+      })
+    } else if (e.target.dataset.category === "experience") {
+      this.setState({
+        cvData:{
+          ...this.state.cvData,
+          experience:this.state.cvData.experience.concat(
+            this.state.inputs.experience
+          )
+        },
+        inputs:{
+          ...this.state.inputs,
+          experience:{
+            name:{
+              value:'',
+              id: uniqid()
+            },
+            position:{
+              value:'',
+              id: uniqid()
+            },
+            date:{
+              to:{
+                value:'',
+                id: uniqid()
+              },
+              from:{
+                value:'',
+                id: uniqid()
+              }
+            },
+            jobTasks: {
+              value:'',
+              id: uniqid()
+            }
+          }
+        }
+      })
+    }
   }
 
   render(){
     return (
       <div className="App">
-        <Input handleChange={this.handleChange} handleSubmit={this.handleSubmit} inputData={this.state.inputs} className="Input"/>
+        <Input 
+          handleChange={this.handleChange} 
+          handleSubmit={this.handleSubmit} 
+          multiSubmit={this.multiSubmit}
+          inputData={this.state.inputs} 
+          className="Input"
+        />
         <Display cvData={this.state.cvData} className="Display"/>
       </div>
     );
