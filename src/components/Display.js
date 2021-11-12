@@ -21,12 +21,12 @@ class Display extends Component {
 
         <div className="experience">
           <h2>Work Experience</h2>
-          <p>{this.props.experience}</p>
+          <p></p>
         </div>
 
         <div className="education">
           <h2>Education</h2>
-          <p>{this.props.education}</p>
+          <p></p>
         </div>
 
         <div className="about">
