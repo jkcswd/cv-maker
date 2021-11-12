@@ -53,10 +53,12 @@ class Input extends Component {
         />
         <InputEducation
         handleChange={this.props.handleChange} 
+        multiSubmit={this.props.multiSubmit}
         inputData={this.props.inputData}  
         />
         <InputWork
         handleChange={this.props.handleChange} 
+        multiSubmit={this.props.multiSubmit}
         inputData={this.props.inputData}  
         />
       </div>
