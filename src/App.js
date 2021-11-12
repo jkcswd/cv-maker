@@ -11,6 +11,8 @@ class App extends Component{
     super(props);
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.multiSubmit = this.multiSubmit.bind(this)
+    this.dateChange = this.dateChange.bind(this)
 
     this.state = {
       inputs: {
@@ -80,6 +82,10 @@ class App extends Component{
                 value:'',
                 id: uniqid()
               }
+            },
+            summary: {
+              value:'',
+              id: uniqid()
             }
         },
         skills: {
@@ -136,6 +142,10 @@ class App extends Component{
     })
   }
 
+  dateChange = e => {
+
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     this.setState({
@@ -150,6 +160,10 @@ class App extends Component{
         }
       }
     })
+  }
+
+  multiSubmit = (e) => {
+
   }
 
   render(){
