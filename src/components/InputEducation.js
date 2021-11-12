@@ -1,22 +1,26 @@
 import React, {Component} from 'react'
+/* 
+Even though InputWork and InputEducation are similar I took the decision to split them into two modules as
+making a general component work with both would require a large amount of props. May refactor later.
+*/
 
 class InputEducation extends Component {
   render() {
     return (
-      <div className="Input">
+      <div className="InputEducation">
         <form>
           <label>
-            {this.props.placeName}:
+            School Name:
             <input 
               type="text" 
-              data-category={"education"}
+              data-category="education"
               data-value="schoolName"
               value={this.props.inputData.education.schoolName.value} 
               onChange={this.props.handleChange}
             />
           </label>
           <label>
-            {this.props.roleOrSubject}:
+            Subject:
             <input 
               type="text" 
               data-category="education"
