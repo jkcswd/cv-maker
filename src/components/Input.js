@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 
 import InputLong from './InputLong';
 import InputShort from './InputShort';
+import InputMulti from './InputMulti'
 
 class Input extends Component {
   render() {
@@ -48,6 +49,18 @@ class Input extends Component {
           inputData={this.props.inputData}  
           propertyCategory="skills" 
           propertyValue="skill"
+        />
+        <InputMulti
+        handleChange={this.props.handleChange} 
+        inputData={this.props.inputData}  
+        placeName="School Name"
+        roleOrSubject="Subject"
+        />
+        <InputMulti
+        handleChange={this.props.handleChange} 
+        inputData={this.props.inputData}  
+        placeName="Company Name"
+        roleOrSubject="Job Title"
         />
       </div>
     )
