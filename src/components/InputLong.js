@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 class InputLong extends Component {
   render() {
     return (
-      <div className="Input">
+      <div className="InputLong">
         <form onSubmit={this.props.handleSubmit} data-category={this.props.propertyCategory} data-value={this.props.propertyValue}>
           <label>
             {this.props.propertyValue}
