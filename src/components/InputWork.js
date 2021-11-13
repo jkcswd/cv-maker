@@ -56,6 +56,13 @@ class InputWork extends Component {
           </label>
           <input type="submit" value="Add" />
         </form>
+        <ul>
+          {this.props.experienceArray.map(item => {
+            return (
+              <li key={item.id}>{item.name.value}<button>Delete</button></li>
+            )
+          })}
+        </ul>
       </div>
     )
   }

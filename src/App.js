@@ -210,6 +210,8 @@ class App extends Component{
           handleSubmit={this.handleSubmit} 
           multiSubmit={this.multiSubmit}
           inputData={this.state.inputs} 
+          educationArray={this.state.cvData.education}
+          experienceArray={this.state.cvData.experience}
           className="Input"
         />
         <Display cvData={this.state.cvData} className="Display"/>

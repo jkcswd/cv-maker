@@ -60,6 +60,13 @@ class InputEducation extends Component {
           </label>
           <input type="submit" value="Add" />
         </form>
+        <ul>
+          {this.props.educationArray.map(item => {
+            return (
+              <li key={item.id}>{item.schoolName.value}<button>Delete</button></li>
+            )
+          })}
+        </ul>
       </div>
     )
   }
