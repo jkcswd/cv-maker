@@ -12,7 +12,6 @@ class App extends Component{
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.multiSubmit = this.multiSubmit.bind(this)
-    this.dateChange = this.dateChange.bind(this)
 
     this.state = {
       inputs: {
@@ -46,13 +45,11 @@ class App extends Component{
           jobTasks:{
             value:''
           },
-          date:{
-            to:{
+          dateFrom:{
               value:''
-            },
-            from:{
-              value:''
-            }
+          },
+          dateTo:{
+            value:''
           }
         },
         education:{
@@ -63,13 +60,11 @@ class App extends Component{
           subject:{
             value:''
           },
-          date:{
-            to:{
-              value:''
-            },
-            from:{
-              value:''
-            }
+          dateFrom:{
+            value:''
+          },
+          dateTo:{
+            value:''
           },
           summary: {
             value:''
@@ -120,16 +115,11 @@ class App extends Component{
         [e.target.dataset.category]: {
           ...this.state.inputs[e.target.dataset.category],
           [e.target.dataset.value]: {
-            value:e.target.value,
-            id: this.state.inputs[e.target.dataset.category][e.target.dataset.value].id
+            value:e.target.value
           }  
         }
       }
     })
-  }
-
-  dateChange = e => {
-
   }
 
   handleSubmit = (e) => {
@@ -140,8 +130,7 @@ class App extends Component{
         [e.target.dataset.category]:{
           ...this.state.cvData[e.target.dataset.category],
           [e.target.dataset.value]:{
-            value:(this.state.inputs[e.target.dataset.category][e.target.dataset.value].value),
-            id:(this.state.inputs[e.target.dataset.category][e.target.dataset.value].id)
+            value:(this.state.inputs[e.target.dataset.category][e.target.dataset.value].value)
           }
         }
       }
@@ -168,13 +157,11 @@ class App extends Component{
             subject:{
               value:''
             },
-            date:{
-              to:{
-                value:'',
-              },
-              from:{
-                value:'',
-              }
+            dateFrom:{
+              value:''
+            },
+            dateTo:{
+              value:''
             },
             summary: {
               value:'',
@@ -200,13 +187,11 @@ class App extends Component{
             position:{
               value:''
             },
-            date:{
-              to:{
-                value:''
-              },
-              from:{
-                value:''
-              }
+            dateFrom:{
+              value:''
+            },
+            dateTo:{
+              value:''
             },
             jobTasks: {
               value:''
