@@ -12,6 +12,7 @@ class App extends Component{
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.multiSubmit = this.multiSubmit.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
 
     this.state = {
       inputs: {
@@ -137,6 +138,17 @@ class App extends Component{
     })
   }
 
+  handleDelete = (e) => {
+    this.setState({
+      cvData:{
+        ...this.state.cvData,
+        [e.target.dataset.category]: this.state.cvData[e.target.dataset.category].filter(item => {
+          return item.id !== e.target.dataset.id
+        })
+      }
+    })
+  }
+
   multiSubmit = (e) => {
     e.preventDefault()
     if (e.target.dataset.category === "education") {
@@ -209,6 +221,7 @@ class App extends Component{
           handleChange={this.handleChange} 
           handleSubmit={this.handleSubmit} 
           multiSubmit={this.multiSubmit}
+          handleDelete={this.handleDelete}
           inputData={this.state.inputs} 
           educationArray={this.state.cvData.education}
           experienceArray={this.state.cvData.experience}
