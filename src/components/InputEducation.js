@@ -63,7 +63,12 @@ class InputEducation extends Component {
         <ul>
           {this.props.educationArray.map(item => {
             return (
-              <li key={item.id}>{item.schoolName.value}<button>Delete</button></li>
+              <li key={item.id}>
+                {item.schoolName.value}
+                <button data-category="education" data-id={item.id} onClick={this.props.handleDelete}>
+                  Delete
+                </button>
+              </li>
             )
           })}
         </ul>

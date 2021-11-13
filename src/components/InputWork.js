@@ -59,7 +59,12 @@ class InputWork extends Component {
         <ul>
           {this.props.experienceArray.map(item => {
             return (
-              <li key={item.id}>{item.name.value}<button>Delete</button></li>
+              <li key={item.id}>
+                {item.name.value}
+                <button data-category="experience" data-id={item.id} onClick={this.props.handleDelete}>
+                  Delete
+                </button>
+              </li>
             )
           })}
         </ul>
