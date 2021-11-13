@@ -18,80 +18,66 @@ class App extends Component{
       inputs: {
         general: {
           name:{
-            value:'',
-            id: uniqid()
+            value:''
           },
           location:{
-            value:'',
-            id: uniqid()
+            value:''
           },
           mobile:{
-            value:'',
-            id: uniqid()
+            value:''
           },
           email:{
-            value:'',
-            id: uniqid()
+            value:''
           }
         },
         profile:{
           statement:{
-            value:'',
-            id: uniqid()
+            value:''
           }
         },
         experience:{
+          id: uniqid(),
           name:{
-            value:'',
-            id: uniqid()
+            value:''
           },
           position:{
-            value:'',
-            id: uniqid()
+            value:''
           },
           jobTasks:{
-            value:'',
-            id: uniqid()
+            value:''
           },
           date:{
             to:{
-              value:'',
-              id: uniqid()
+              value:''
             },
             from:{
-              value:'',
-              id: uniqid()
+              value:''
             }
           }
         },
         education:{
-            schoolName:{
-              value:'',
-              id: uniqid()
+          id:uniqid(),
+          schoolName:{
+            value:''
+          },
+          subject:{
+            value:''
+          },
+          date:{
+            to:{
+              value:''
             },
-            subject:{
-              value:'',
-              id: uniqid()
-            },
-            date:{
-              to:{
-                value:'',
-                id: uniqid()
-              },
-              from:{
-                value:'',
-                id: uniqid()
-              }
-            },
-            summary: {
-              value:'',
-              id: uniqid()
+            from:{
+              value:''
             }
+          },
+          summary: {
+            value:''
+          }
         },
         skills: {
           skill:{
-            value:'',
-            id: uniqid()
+            value:''
           }
         }
       },
@@ -175,27 +161,23 @@ class App extends Component{
         inputs:{
           ...this.state.inputs,
           education:{
+            id: uniqid(),
             schoolName:{
-              value:'',
-              id: uniqid()
+              value:''
             },
             subject:{
-              value:'',
-              id: uniqid()
+              value:''
             },
             date:{
               to:{
                 value:'',
-                id: uniqid()
               },
               from:{
                 value:'',
-                id: uniqid()
               }
             },
             summary: {
               value:'',
-              id: uniqid()
             }
           }
         }
@@ -211,27 +193,23 @@ class App extends Component{
         inputs:{
           ...this.state.inputs,
           experience:{
+            id: uniqid(),
             name:{
-              value:'',
-              id: uniqid()
+              value:''
             },
             position:{
-              value:'',
-              id: uniqid()
+              value:''
             },
             date:{
               to:{
-                value:'',
-                id: uniqid()
+                value:''
               },
               from:{
-                value:'',
-                id: uniqid()
+                value:''
               }
             },
             jobTasks: {
-              value:'',
-              id: uniqid()
+              value:''
             }
           }
         }
