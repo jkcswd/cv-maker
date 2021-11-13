@@ -29,9 +29,9 @@ class InputWork extends Component {
             Date from:
             <input 
               data-category="experience"
-              data-value="date"
+              data-value="dateFrom"
               type="date" 
-              value={this.props.inputData.experience.date.from.value}
+              value={this.props.inputData.experience.dateFrom.value}
               onChange={this.props.handleChange}
             />
           </label>
@@ -39,9 +39,9 @@ class InputWork extends Component {
             Date to:
             <input 
               data-category="experience"
-              data-value="date"
+              data-value="dateTo"
               type="date" 
-              value={this.props.inputData.experience.date.from.value}
+              value={this.props.inputData.experience.dateTo.value}
               onChange={this.props.handleChange}
             />
           </label>

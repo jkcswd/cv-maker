@@ -33,9 +33,9 @@ class InputEducation extends Component {
             Date from:
             <input 
               data-category="education"
-              data-value="date"
+              data-value="dateFrom"
               type="date" 
-              value={this.props.inputData.education.date.from.value}
+              value={this.props.inputData.education.dateFrom.value}
               onChange={this.props.handleChange}
             />
           </label>
@@ -43,9 +43,9 @@ class InputEducation extends Component {
             Date to:
             <input 
               data-category="education"
-              data-value="date"
+              data-value="dateTo"
               type="date" 
-              value={this.props.inputData.education.date.from.value}
+              value={this.props.inputData.education.dateTo.value}
               onChange={this.props.handleChange}
             />
           </label>
