@@ -25,7 +25,7 @@ class Display extends Component {
             {this.props.cvData.experience.map(job => {
               return (
                 <li key={job.id}>
-                  <h4>{job.name.value} ({job.date.from.value}-{job.date.to.value})</h4><h5>{job.position.value}</h5>
+                  <h4>{job.name.value} ({job.dateFrom.value}-{job.dateTo.value})</h4><h5>{job.position.value}</h5>
                   <p>{job.jobTasks.value}</p>
                 </li>
               )
@@ -39,7 +39,7 @@ class Display extends Component {
             {this.props.cvData.education.map(item => {
               return (
                 <li key={item.id}>
-                  <h4>{item.schoolName.value} ({item.date.from.value}-{item.date.to.value})</h4><h5>{item.subject.value}</h5>
+                  <h4>{item.schoolName.value} ({item.dateFrom.value}-{item.dateTo.value})</h4><h5>{item.subject.value}</h5>
                   <p>{item.summary.value}</p>
                 </li>
               )
