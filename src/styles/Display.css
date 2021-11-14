@@ -4,13 +4,6 @@
   justify-content: center;
   flex-direction: column;
 
-  border-bottom: 1px solid grey;
-}
-.profile {
-  border-bottom: 1px solid grey;
-}
-.experience {
-  border-bottom: 1px solid grey;
 }
 
 .experience h2,ul {
@@ -28,8 +21,6 @@
 }
 
 .education {
-  border-bottom: 1px solid grey;
-
   display: flex;
   flex-direction: column;
 }
@@ -46,4 +37,31 @@
 
 .education li * {
   margin: 2px;
+}
+
+@media print {
+  html, body {
+    background-color: white;
+  }
+  header, footer, .Input{
+    display:none;
+  }
+  main {
+    background-color: white;
+  }
+
+  .Display {
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+
+    box-shadow: none;
+
+    margin-left: 20px;
+
+    width: 100%;
+
+    border-collapse: separate;
+  }
 }
