@@ -11,7 +11,7 @@ class Display extends Component {
           <p>
             <strong>Location:</strong> {this.props.cvData.general.location.value} 
             |<strong>Mobile:</strong>  {this.props.cvData.general.mobile.value}
-            |<strong>email:</strong> {this.props.cvData.general.email.value}
+            |<strong>Email:</strong> {this.props.cvData.general.email.value}
           </p>
         </div>
 
