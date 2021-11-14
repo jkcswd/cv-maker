@@ -214,10 +214,14 @@ class App extends Component{
     }
   }
 
+  handlePrint = () => {
+    window.print()
+  }
+
   render(){
     return (
       <div className="App">
-        <header>CV-Maker</header>
+        <header> <div>CV-Maker</div>  <button onClick={this.handlePrint}>Print</button></header>
         <main>
           <Input 
             handleChange={this.handleChange} 
