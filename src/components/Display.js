@@ -26,7 +26,8 @@ class Display extends Component {
             {this.props.cvData.experience.map(job => {
               return (
                 <li key={job.id}>
-                  <h4>{job.name.value} ({job.dateFrom.value} to {job.dateTo.value})</h4><h5>{job.position.value}</h5>
+                  <h4>{job.name.value}</h4>
+                  <h5>{job.position.value} ({job.dateFrom.value} to {job.dateTo.value})</h5>
                   <p>{job.jobTasks.value}</p>
                 </li>
               )
