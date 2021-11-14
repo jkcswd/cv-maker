@@ -1,9 +1,10 @@
 .general {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-
+  
+}
+.general h1 {
+  margin:0px;
 }
 
 .experience h2,ul {
