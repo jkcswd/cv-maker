@@ -1,0 +1,49 @@
+.general {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  border-bottom: 1px solid grey;
+}
+.profile {
+  border-bottom: 1px solid grey;
+}
+.experience {
+  border-bottom: 1px solid grey;
+}
+
+.experience h2,ul {
+  margin:5px;
+}
+
+.experience li {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.experience li * {
+  margin: 2px;
+}
+
+.education {
+  border-bottom: 1px solid grey;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.education h2,ul {
+  margin:5px;
+}
+
+.education li {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.education li * {
+  margin: 2px;
+}

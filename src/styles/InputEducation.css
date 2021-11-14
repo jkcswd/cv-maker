@@ -1,0 +1,34 @@
+.InputEducation {
+ width: 100%;
+
+ padding: 5px;
+ margin: 20px;
+}
+
+.school-subject {
+  width: 100%;
+
+  display: flex;
+}
+.school-subject * {
+ width: 50%;
+}
+
+.InputEducation textarea {
+  width: 98%;
+}
+
+.add {
+  width:100%
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}
+

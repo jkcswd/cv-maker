@@ -1,0 +1,19 @@
+.InputLong {
+  display: flex;
+  align-items: stretch;
+
+  width: 100%;
+
+  margin: 20px;
+} 
+
+.InputLong form {
+  width: 100%;
+
+  display: flex;
+  justify-content: stretch;
+}
+
+.InputLong form * {
+  flex-grow: 1;
+}

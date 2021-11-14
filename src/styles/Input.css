@@ -1,0 +1,7 @@
+.general-info {
+  margin:20px;
+  width:100%;
+}
+.general-info * {
+  flex-grow: 1;
+}

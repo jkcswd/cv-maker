@@ -18,33 +18,33 @@ class App extends Component{
       inputs: {
         general: {
           name:{
-            value:''
+            value:'Name'
           },
           location:{
-            value:''
+            value:'Location'
           },
           mobile:{
-            value:''
+            value:'Mobile Number'
           },
           email:{
-            value:''
+            value:'Email Address'
           }
         },
         profile:{
           statement:{
-            value:''
+            value:'Write your personal statement here.'
           }
         },
         experience:{
           id: uniqid(),
           name:{
-            value:''
+            value:'Company Name'
           },
           position:{
-            value:''
+            value:'Job Title'
           },
           jobTasks:{
-            value:''
+            value:'Job Description'
           },
           dateFrom:{
               value:''
@@ -56,10 +56,10 @@ class App extends Component{
         education:{
           id:uniqid(),
           schoolName:{
-            value:''
+            value:'School Name'
           },
           subject:{
-            value:''
+            value:'Subject'
           },
           dateFrom:{
             value:''
@@ -68,12 +68,12 @@ class App extends Component{
             value:''
           },
           summary: {
-            value:''
+            value:'Summary'
           }
         },
         skills: {
           skill:{
-            value:''
+            value:'Write your skills and languages here.'
           }
         }
       },
@@ -164,10 +164,10 @@ class App extends Component{
           education:{
             id: uniqid(),
             schoolName:{
-              value:''
+              value:'School Name'
             },
             subject:{
-              value:''
+              value:'Subject'
             },
             dateFrom:{
               value:''
@@ -176,7 +176,7 @@ class App extends Component{
               value:''
             },
             summary: {
-              value:'',
+              value:'Summary',
             }
           }
         }
@@ -194,10 +194,10 @@ class App extends Component{
           experience:{
             id: uniqid(),
             name:{
-              value:''
+              value:'Company Name'
             },
             position:{
-              value:''
+              value:'Job Title'
             },
             dateFrom:{
               value:''
@@ -206,7 +206,7 @@ class App extends Component{
               value:''
             },
             jobTasks: {
-              value:''
+              value:'Job Description'
             }
           }
         }
@@ -217,17 +217,22 @@ class App extends Component{
   render(){
     return (
       <div className="App">
-        <Input 
-          handleChange={this.handleChange} 
-          handleSubmit={this.handleSubmit} 
-          multiSubmit={this.multiSubmit}
-          handleDelete={this.handleDelete}
-          inputData={this.state.inputs} 
-          educationArray={this.state.cvData.education}
-          experienceArray={this.state.cvData.experience}
-          className="Input"
-        />
-        <Display cvData={this.state.cvData} className="Display"/>
+        <header>CV-Maker</header>
+        <main>
+          <Input 
+            handleChange={this.handleChange} 
+            handleSubmit={this.handleSubmit} 
+            multiSubmit={this.multiSubmit}
+            handleDelete={this.handleDelete}
+            inputData={this.state.inputs} 
+            educationArray={this.state.cvData.education}
+            experienceArray={this.state.cvData.experience}
+            className="Input"
+          />
+          <Display cvData={this.state.cvData} className="Display"/>
+        </main>
+        <footer>Made by James Spencer</footer>
+        
       </div>
     );
   }

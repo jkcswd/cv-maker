@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 
+import '../styles/Display.css'
+
 class Display extends Component {
   render() {
     return (
       <div className="Display">
-
         <div className="general">
           <h1>{this.props.cvData.general.name.value}</h1>
           <p>
@@ -25,7 +26,7 @@ class Display extends Component {
             {this.props.cvData.experience.map(job => {
               return (
                 <li key={job.id}>
-                  <h4>{job.name.value} ({job.dateFrom.value}-{job.dateTo.value})</h4><h5>{job.position.value}</h5>
+                  <h4>{job.name.value} ({job.dateFrom.value} to {job.dateTo.value})</h4><h5>{job.position.value}</h5>
                   <p>{job.jobTasks.value}</p>
                 </li>
               )
@@ -39,7 +40,8 @@ class Display extends Component {
             {this.props.cvData.education.map(item => {
               return (
                 <li key={item.id}>
-                  <h4>{item.schoolName.value} ({item.dateFrom.value}-{item.dateTo.value})</h4><h5>{item.subject.value}</h5>
+                  <h4>{item.schoolName.value}</h4>
+                  <h5>{item.subject.value} ({item.dateFrom.value} to {item.dateTo.value})</h5>
                   <p>{item.summary.value}</p>
                 </li>
               )
