@@ -2,7 +2,7 @@
   "name": "cv-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jkcswd.github.io/",
+  "homepage": "https://jkcswd.github.io/cv-maker",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
