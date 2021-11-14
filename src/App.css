@@ -12,8 +12,16 @@ header {
   font-size: 50px;
 
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
+}
+
+header .button {
+  height: 100%;
+  margin-right: 30px;
+}
+header .button * {
+  margin: 1px;
 }
 
 main{

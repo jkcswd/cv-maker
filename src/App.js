@@ -221,7 +221,15 @@ class App extends Component{
   render(){
     return (
       <div className="App">
-        <header> <div>CV-Maker</div>  <button onClick={this.handlePrint}>Print</button></header>
+        <header> 
+          <div>CV-Maker</div>  
+          <button onClick={this.handlePrint} className="button">
+           <h2>Print CV</h2>
+           <p>For PDF select "Save to PDF"</p> 
+           <p>Set margins to "None"</p>
+          </button>
+        </header>
+
         <main>
           <Input 
             handleChange={this.handleChange} 
@@ -235,6 +243,7 @@ class App extends Component{
           />
           <Display cvData={this.state.cvData} className="Display"/>
         </main>
+
         <footer>Made by James Spencer</footer>
         
       </div>
