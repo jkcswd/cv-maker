@@ -1,10 +1,10 @@
 # CV-Maker
 
-An app that allows users to create CVs and print to paper or PDF.
+An app that allows users to create CVs and print to paper or PDF. Created using class based React then refactored to functional React. 
 
 ## Tech
 
-- React (class components).
+- React functional.
 - CSS
 
 ## How to Use
