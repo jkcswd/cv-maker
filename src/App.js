@@ -122,13 +122,13 @@ const App = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    this.setState({
+    setCvData({
       cvData: {
-        ...this.state.cvData,
+        ...cvData,
         [e.target.dataset.category]:{
-          ...this.state.cvData[e.target.dataset.category],
+          ...cvData[e.target.dataset.category],
           [e.target.dataset.value]:{
-            value:(this.state.inputs[e.target.dataset.category][e.target.dataset.value].value)
+            value:(inputs[e.target.dataset.category][e.target.dataset.value].value)
           }
         }
       }
