@@ -1,23 +1,22 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 import '../styles/InputShort.css'
 
-class InputShort extends Component {
-  render() {
-    return (
-      <div className="InputShort">
+const InputShort = (props) => {
+  return (
+    <div className="InputShort">
         <form 
           className="input-form" 
-          onSubmit={this.props.handleSubmit} 
-          data-category={this.props.propertyCategory} 
-          data-value={this.props.propertyValue}
+          onSubmit={props.handleSubmit} 
+          data-category={props.propertyCategory} 
+          data-value={props.propertyValue}
         >
           <input 
             type="text" 
-            data-category={this.props.propertyCategory}
-            data-value={this.props.propertyValue}
-            value={this.props.inputData[this.props.propertyCategory][this.props.propertyValue].value} 
-            onChange={this.props.handleChange} 
+            data-category={props.propertyCategory}
+            data-value={props.propertyValue}
+            value={props.inputData[props.propertyCategory][props.propertyValue].value} 
+            onChange={props.handleChange} 
           />
           <input 
             className="button"
@@ -26,8 +25,7 @@ class InputShort extends Component {
           />
         </form>
       </div>
-    )
-  }
+  )
 }
 
 export default InputShort

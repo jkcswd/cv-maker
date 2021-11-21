@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 import InputLong from './InputLong';
 import InputShort from './InputShort';
@@ -6,72 +6,70 @@ import InputEducation from './InputEducation';
 import InputWork from './InputWork'
 import '../styles/Input.css'
 
-class Input extends Component {
-  render() {
+const Input = (props) => {
     return (
       <div className="Input">
         <div className="general-info">
           <InputShort 
-            handleChange={this.props.handleChange} 
-            handleSubmit={this.props.handleSubmit} 
-            inputData={this.props.inputData}  
+            handleChange={props.handleChange} 
+            handleSubmit={props.handleSubmit} 
+            inputData={props.inputData}  
             propertyCategory="general" 
             propertyValue="name"
           />
           <InputShort 
-            handleChange={this.props.handleChange} 
-            handleSubmit={this.props.handleSubmit} 
-            inputData={this.props.inputData}  
+            handleChange={props.handleChange} 
+            handleSubmit={props.handleSubmit} 
+            inputData={props.inputData}  
             propertyCategory="general" 
             propertyValue="location"
           />
           <InputShort 
-            handleChange={this.props.handleChange} 
-            handleSubmit={this.props.handleSubmit} 
-            inputData={this.props.inputData}  
+            handleChange={props.handleChange} 
+            handleSubmit={props.handleSubmit} 
+            inputData={props.inputData}  
             propertyCategory="general" 
             propertyValue="mobile"
           />
           <InputShort 
-            handleChange={this.props.handleChange} 
-            handleSubmit={this.props.handleSubmit} 
-            inputData={this.props.inputData}  
+            handleChange={props.handleChange} 
+            handleSubmit={props.handleSubmit} 
+            inputData={props.inputData}  
             propertyCategory="general" 
             propertyValue="email"
           />
         </div>
 
         <InputLong 
-          handleChange={this.props.handleChange} 
-          handleSubmit={this.props.handleSubmit} 
-          inputData={this.props.inputData}  
+          handleChange={props.handleChange} 
+          handleSubmit={props.handleSubmit} 
+          inputData={props.inputData}  
           propertyCategory="profile" 
           propertyValue="statement"
         />
         <InputLong 
-          handleChange={this.props.handleChange} 
-          handleSubmit={this.props.handleSubmit} 
-          inputData={this.props.inputData}  
+          handleChange= {props.handleChange} 
+          handleSubmit={props.handleSubmit} 
+          inputData={props.inputData}  
           propertyCategory="skills" 
           propertyValue="skill"
         />
         <InputEducation
-        handleChange={this.props.handleChange} 
-        multiSubmit={this.props.multiSubmit}
-        handleDelete={this.props.handleDelete}
-        inputData={this.props.inputData}
-        educationArray={this.props.educationArray}  
+        handleChange={props.handleChange} 
+        multiSubmit={props.multiSubmit}
+        handleDelete={props.handleDelete}
+        inputData={props.inputData}
+        educationArray={props.educationArray}  
         />
         <InputWork
-        handleChange={this.props.handleChange} 
-        multiSubmit={this.props.multiSubmit}
-        handleDelete={this.props.handleDelete}
-        inputData={this.props.inputData}  
-        experienceArray={this.props.experienceArray}
+        handleChange={props.handleChange} 
+        multiSubmit={props.multiSubmit}
+        handleDelete={props.handleDelete}
+        inputData={props.inputData}  
+        experienceArray={props.experienceArray}
         />
       </div>
     )
   }
-}
 
 export default Input

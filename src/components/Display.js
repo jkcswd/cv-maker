@@ -1,29 +1,28 @@
-import React, { Component } from "react";
+import React from "react";
 
 import '../styles/Display.css'
 
-class Display extends Component {
-  render() {
+const Display = (props) => {
     return (
       <div className="Display">
         <div className="general">
-          <h1>{this.props.cvData.general.name.value}</h1>
+          <h1>{props.cvData.general.name.value}</h1>
           <p>
-            <strong>Location:</strong> {this.props.cvData.general.location.value} 
-            |<strong>Mobile:</strong>  {this.props.cvData.general.mobile.value}
-            |<strong>Email:</strong> {this.props.cvData.general.email.value}
+            <strong>Location:</strong> {props.cvData.general.location.value} 
+            |<strong>Mobile:</strong>  {props.cvData.general.mobile.value}
+            |<strong>Email:</strong> {props.cvData.general.email.value}
           </p>
         </div>
 
         <div className="profile">
           <h2>Personal Profile</h2>
-          <p>{this.props.cvData.profile.statement.value}</p>
+          <p>{props.cvData.profile.statement.value}</p>
         </div>
 
         <div className="experience">
           <h2>Work Experience</h2>
           <ul>
-            {this.props.cvData.experience.map(job => {
+            {props.cvData.experience.map(job => {
               return (
                 <li key={job.id}>
                   <h4>{job.name.value}</h4>
@@ -38,7 +37,7 @@ class Display extends Component {
         <div className="education">
           <h2>Education</h2>
           <ul>
-            {this.props.cvData.education.map(item => {
+            {props.cvData.education.map(item => {
               return (
                 <li key={item.id}>
                   <h4>{item.schoolName.value}</h4>
@@ -52,12 +51,11 @@ class Display extends Component {
 
         <div className="about">
           <h2>Skills and Languages</h2>
-          <p>{this.props.cvData.skills.skill.value}</p>
+          <p>{props.cvData.skills.skill.value}</p>
         </div>
 
       </div>
     )
   }
-}
 
 export default Display

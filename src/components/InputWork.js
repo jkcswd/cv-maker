@@ -1,26 +1,25 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 import '../styles/InputWork.css'
 
-class InputWork extends Component {
-  render() {
+const InputWork = (props) => {
     return (
       <div className="InputWork">
-        <form onSubmit={this.props.multiSubmit} data-category="experience">
+        <form onSubmit={props.multiSubmit} data-category="experience">
           <div className="company-details">
             <input 
               type="text" 
               data-category="experience"
               data-value="name"
-              value={this.props.inputData.experience.name.value} 
-              onChange={this.props.handleChange}
+              value={props.inputData.experience.name.value} 
+              onChange={props.handleChange}
             />
             <input 
               type="text" 
               data-category="experience"
               data-value="position"
-              value={this.props.inputData.experience.position.value}
-              onChange={this.props.handleChange}
+              value={props.inputData.experience.position.value}
+              onChange={props.handleChange}
             />
           </div>
           <div className="dates">
@@ -30,8 +29,8 @@ class InputWork extends Component {
                 data-category="experience"
                 data-value="dateFrom"
                 type="date" 
-                value={this.props.inputData.experience.dateFrom.value}
-                onChange={this.props.handleChange}
+                value={props.inputData.experience.dateFrom.value}
+                onChange={props.handleChange}
               />
             </label>
             <label>
@@ -40,8 +39,8 @@ class InputWork extends Component {
                 data-category="experience"
                 data-value="dateTo"
                 type="date" 
-                value={this.props.inputData.experience.dateTo.value}
-                onChange={this.props.handleChange}
+                value={props.inputData.experience.dateTo.value}
+                onChange={props.handleChange}
               />
             </label>
           </div>
@@ -49,17 +48,17 @@ class InputWork extends Component {
           <textarea 
             data-category="experience"
             data-value="jobTasks"
-            value={this.props.inputData.experience.jobTasks.value}
-            onChange={this.props.handleChange}
+            value={props.inputData.experience.jobTasks.value}
+            onChange={props.handleChange}
           />
           <input type="submit" value="Add" className="add button" />
         </form>
         <ul>
-          {this.props.experienceArray.map(item => {
+          {props.experienceArray.map(item => {
             return (
               <li key={item.id}>
                 {item.name.value}
-                <button className="button" data-category="experience" data-id={item.id} onClick={this.props.handleDelete}>
+                <button className="button" data-category="experience" data-id={item.id} onClick={props.handleDelete}>
                   Delete
                 </button>
               </li>
@@ -69,6 +68,5 @@ class InputWork extends Component {
       </div>
     )
   }
-}
 
 export default InputWork

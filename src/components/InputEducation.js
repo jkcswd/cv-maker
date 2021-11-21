@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 import '../styles/InputEducation.css'
 /* 
@@ -6,25 +6,24 @@ Even though InputWork and InputEducation are similar I took the decision to spli
 making a general component work with both would require a large amount of props. May refactor later.
 */
 
-class InputEducation extends Component {
-  render() {
+const InputEducation = (props) => {
     return (
       <div className="InputEducation">
-        <form onSubmit={this.props.multiSubmit} data-category="education">
+        <form onSubmit={props.multiSubmit} data-category="education">
           <div className="school-subject">
             <input 
               type="text" 
               data-category="education"
               data-value="schoolName"
-              value={this.props.inputData.education.schoolName.value} 
-              onChange={this.props.handleChange}
+              value={props.inputData.education.schoolName.value} 
+              onChange={props.handleChange}
             />
             <input 
               type="text" 
               data-category="education"
               data-value="subject"
-              value={this.props.inputData.education.subject.value}
-              onChange={this.props.handleChange}
+              value={props.inputData.education.subject.value}
+              onChange={props.handleChange}
             />
           </div>    
           <div className="dates">
@@ -34,8 +33,8 @@ class InputEducation extends Component {
                 data-category="education"
                 data-value="dateFrom"
                 type="date" 
-                value={this.props.inputData.education.dateFrom.value}
-                onChange={this.props.handleChange}
+                value={props.inputData.education.dateFrom.value}
+                onChange={props.handleChange}
               />
             </label>
             <label>
@@ -44,8 +43,8 @@ class InputEducation extends Component {
                 data-category="education"
                 data-value="dateTo"
                 type="date" 
-                value={this.props.inputData.education.dateTo.value}
-                onChange={this.props.handleChange}
+                value={props.inputData.education.dateTo.value}
+                onChange={props.handleChange}
               />
             </label>
           </div>
@@ -53,17 +52,17 @@ class InputEducation extends Component {
           <textarea 
             data-category="education"
             data-value="summary"
-            value={this.props.inputData.education.summary.value}
-            onChange={this.props.handleChange}
+            value={props.inputData.education.summary.value}
+            onChange={props.handleChange}
           />
           <input type="submit" value="Add" className="add button" />
         </form>
         <ul>
-          {this.props.educationArray.map(item => {
+          {props.educationArray.map(item => {
             return (
               <li key={item.id}>
                 {item.schoolName.value}
-                <button className="button" data-category="education" data-id={item.id} onClick={this.props.handleDelete}>
+                <button className="button" data-category="education" data-id={item.id} onClick={props.handleDelete}>
                   Delete
                 </button>
               </li>
@@ -73,6 +72,5 @@ class InputEducation extends Component {
       </div>
     )
   }
-}
 
 export default InputEducation

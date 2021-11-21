@@ -1,23 +1,21 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 import '../styles/InputLong.css'
 
-class InputLong extends Component {
-  render() {
+const InputLong = (props) => {
     return (
       <div className="InputLong">
-        <form onSubmit={this.props.handleSubmit} data-category={this.props.propertyCategory} data-value={this.props.propertyValue}>
+        <form onSubmit={props.handleSubmit} data-category={props.propertyCategory} data-value={props.propertyValue}>
           <textarea 
-            data-category={this.props.propertyCategory}
-            data-value={this.props.propertyValue}
-            value={this.props.inputData[this.props.propertyCategory][this.props.propertyValue].value} 
-            onChange={this.props.handleChange} 
+            data-category={props.propertyCategory}
+            data-value={props.propertyValue}
+            value={props.inputData[props.propertyCategory][props.propertyValue].value} 
+            onChange={props.handleChange} 
           />
           <input className="button" type="submit" value="Update" />
         </form>
       </div>
     )
   }
-}
 
 export default InputLong
