@@ -71,7 +71,7 @@ const App = (props) => {
         }
       }
     },
-  })
+  });
 
   const [cvData, setCvData] = useState({
     cvData: {
@@ -102,62 +102,63 @@ const App = (props) => {
         }
       }
     }
-
-  })
+  });
 
   const handleChange = (e) => {
     // Use data-attributes so handleChange can be used for modifying any state property. 
     setInputs({
       inputs:{
-        ...inputs,
+        ...inputs.inputs,
         [e.target.dataset.category]: {
-          ...inputs[e.target.dataset.category],
+          ...inputs.inputs[e.target.dataset.category],
           [e.target.dataset.value]: {
             value:e.target.value
           }  
         }
       }
-    })
+    });
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setCvData({
       cvData: {
-        ...cvData,
+        ...cvData.cvData,
         [e.target.dataset.category]:{
-          ...cvData[e.target.dataset.category],
+          ...cvData.cvData[e.target.dataset.category],
           [e.target.dataset.value]:{
-            value:(inputs[e.target.dataset.category][e.target.dataset.value].value)
+            value:(inputs.inputs[e.target.dataset.category][e.target.dataset.value].value)
           }
         }
       }
-    })
+    });
   }
 
   const handleDelete = (e) => {
-    this.setState({
+    setCvData({
       cvData:{
-        ...this.state.cvData,
-        [e.target.dataset.category]: this.state.cvData[e.target.dataset.category].filter(item => {
+        ...cvData.cvData,
+        [e.target.dataset.category]: cvData.cvData[e.target.dataset.category].filter(item => {
           return item.id !== e.target.dataset.id
         })
       }
-    })
+    });
   }
 
   const multiSubmit = (e) => {
     e.preventDefault()
     if (e.target.dataset.category === "education") {
-      this.setState({
+      setCvData({
         cvData:{
-          ...this.state.cvData,
-          education:this.state.cvData.education.concat(
-            this.state.inputs.education
+          ...cvData.cvData,
+          education:cvData.cvData.education.concat(
+            inputs.inputs.education
           )
-        },
+        }
+      });
+      setInputs({
         inputs:{
-          ...this.state.inputs,
+          ...inputs.inputs,
           education:{
             id: uniqid(),
             schoolName:{
@@ -177,41 +178,41 @@ const App = (props) => {
             }
           }
         }
-      })
+      });
     } else if (e.target.dataset.category === "experience") {
-      this.setState({
+      setCvData({
         cvData:{
-          ...this.state.cvData,
-          experience:this.state.cvData.experience.concat(
-            this.state.inputs.experience
-          )
-        },
-        inputs:{
-          ...this.state.inputs,
-          experience:{
-            id: uniqid(),
-            name:{
-              value:'Company Name'
-            },
-            position:{
-              value:'Job Title'
-            },
-            dateFrom:{
-              value:''
-            },
-            dateTo:{
-              value:''
-            },
-            jobTasks: {
-              value:'Job Description'
+          ...cvData.cvData,
+          experience:cvData.cvData.experience.concat(inputs.inputs.experience)
+        }
+      });
+        setInputs({
+          inputs:{
+            ...inputs.inputs,
+            experience:{
+              id: uniqid(),
+              name:{
+                value:'Company Name'
+              },
+              position:{
+                value:'Job Title'
+              },
+              dateFrom:{
+                value:''
+              },
+              dateTo:{
+                value:''
+              },
+              jobTasks: {
+                value:'Job Description'
+              }
             }
           }
-        }
-      })
+        }) 
     }
   }
 
-   const handlePrint = () => {
+  const handlePrint = () => {
     window.print()
   }
 
@@ -232,12 +233,12 @@ const App = (props) => {
           handleSubmit={handleSubmit} 
           multiSubmit={multiSubmit}
           handleDelete={handleDelete}
-          inputData={inputs} 
-          educationArray={cvData.education}
-          experienceArray={cvData.experience}
+          inputData={inputs.inputs} 
+          educationArray={cvData.cvData.education}
+          experienceArray={cvData.cvData.experience}
           className="Input"
         />
-        <Display cvData={cvData} className="Display"/>
+        <Display cvData={cvData.cvData} className="Display"/>
       </main>
 
       <footer>Made by James Spencer</footer>
